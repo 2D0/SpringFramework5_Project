@@ -1,5 +1,6 @@
 package myspring.di.xml;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 import org.junit.jupiter.api.Test;
@@ -24,5 +25,11 @@ public class HelloBeanJunitTest {
 
 		// assertSame() 메서드 사용해서 주소 비교
 		assertSame(helloById, helloByType);
+
+		// setName() Injection을 검증하기 - 값 비교
+		assertEquals("Hello 스프링", helloByType.sayHello());
+
+		// setPrinter() Injection을 검증하기
+		helloByType.print();
 	}
 }
