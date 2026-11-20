@@ -33,6 +33,12 @@ public class AnnotatedHelloBeanTest {
 	HelloBeanCons helloCons;
 
 	@Test
+	void hello_constructor() {
+		assertEquals("Hello 어노테이션생성자", helloCons.sayHello());
+		helloCons.print();
+	}
+
+	@Test
 	@Disabled
 	void hello() {
 		assertEquals("Hello 어노테이션", hello.sayHello());
@@ -43,8 +49,4 @@ public class AnnotatedHelloBeanTest {
 		assertEquals("Hello 어노테이션", printerResource.toString());
 	}
 
-	@Test
-	void hello_constructor() {
-		assertEquals("Hello 어노테이션생성자", helloCons.sayHello());
-	}
 }
