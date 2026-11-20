@@ -16,13 +16,15 @@ import org.springframework.stereotype.Component;
 public class HelloBean {
 
 	// @Value 는 <property name="name" value="어노테이션" />와 같다.
-	@Value("${app.setter.name}")
+	@Value("${app.setter.name}") // 어노테이션
 	String name;
 
 	// @Autowired 는 <property name="printer" ref="stringPrinter" /> 와 같다.
 	@Autowired
 	@Qualifier("stringPrinter")
 	PrinterBean printer;
+
+	@Value("#{'${app.namelist}'.split(',')}") // Java,SpringFW,SpringBoot
 	List<String> names;
 
 	public HelloBean() {
