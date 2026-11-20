@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+//전략2 (어노테이션 + XML 같이 사용하는 방식)
+//Setter Injection
+//- 변수 별로 각각 주입 받는 방식
+
 //@Component 는 <bean></bean> 과 같다.
 @Component
 public class HelloBean {
