@@ -35,6 +35,13 @@ public class AnnotatedHelloBeanTest {
 	void hello_constructor() {
 		assertEquals("Hello 어노테이션생성자", helloCons.sayHello());
 		helloCons.print();
+
+		for (String name : helloCons.getNames()) {
+			System.out.println(name);
+		}
+
+		assertEquals(3, helloCons.getNames().size());
+		assertEquals("SpringBoot", helloCons.getNames().get(2));
 	}
 
 	@Test

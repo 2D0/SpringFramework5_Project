@@ -15,10 +15,14 @@ import org.springframework.stereotype.Component;
 public class HelloBeanCons {
 	String name;
 	PrinterBean printer;
+
+	@Value("#{'${app.namelist}'.split(',')}")
 	List<String> names;
 
+	// 어노테이션생성자
 	@Autowired
-	public HelloBeanCons(@Value("${app.constructor.name}") String name, @Qualifier("consolePrinter") PrinterBean printer) {
+	public HelloBeanCons(@Value("${app.constructor.name}") String name,
+			@Qualifier("consolePrinter") PrinterBean printer) {
 		System.out.println(this.getClass().getName() + " 인자가 있는 생성자 호출됨!");
 		this.name = name;
 		this.printer = printer;
